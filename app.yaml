@@ -1,0 +1,13 @@
+application: dtest456
+version: 1
+runtime: python
+api_version: 1
+
+default_expiration: "1d 1h"
+
+handlers:
+- url: /upload*
+  script: upload.py
+
+- url: .*
+  script: main.py
