@@ -18,7 +18,7 @@ class UploadPostHandler(webapp.RequestHandler):
   def post(self):
     lines = str(self.request).split("\n")
     for line in lines:
-      if line.startswith('Content-Disposition'):
+      if line.startswith('Content-Disposition') and line.find('filename=') > -1:
         filename = line.split(';')[2][11:-2]
     
     unique_id = str(uuid.uuid1())

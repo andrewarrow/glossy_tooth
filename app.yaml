@@ -6,7 +6,7 @@ api_version: 1
 default_expiration: "1d 1h"
 
 handlers:
-- url: /upload*
+- url: /upload.*
   script: upload.py
 
 - url: .*

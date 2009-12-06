@@ -35,7 +35,7 @@ class MainHandler(webapp.RequestHandler):
     self.response.out.write(template.render('index.html', {}))
 
 def main():
-  application = webapp.WSGIApplication([('/image/(.*)', ImageHandler),
+  application = webapp.WSGIApplication([('/images/(.*)', ImageHandler),
                                         ('/(.*)', MainHandler)
                                         ],
                                        debug=True)
