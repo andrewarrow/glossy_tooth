@@ -1,0 +1,53 @@
+glossy_tooth can turn Google App Engine into a CDN (content distribution network) for media (images, sounds, movies, etc.)
+
+Step 1.
+Clone this git repo.
+
+Step 2.
+Download and install Google App Engine SDK:
+
+http://code.google.com/appengine/downloads.html
+
+Step 3.
+Create a google app engine account:
+
+http://appengine.google.com/
+
+and create an application.  Name it something.
+
+Step 4.
+
+Change the application name in app.yaml to the name of your application.
+
+Step 5.
+
+Deploy your application with the command:
+
+appcfg.py update .
+
+(or use the GUI)
+
+Step 6.
+
+Open a browser to:
+
+http://yourappname.appspot.com/
+
+You should see "Welcome to glossy_tooth."
+
+Step 7.
+
+Goto:
+
+http://yourappname.appspot.com/upload
+
+Upload an image.  Leave unique_id blank to have it auto generated for you.
+
+Step 8.
+
+Use the image with url:
+
+http://yourappname.appspot.com/images/3a0110a1-e23b-11de-b88c-69d903d5c500
+
+Replace "3a0110a1-e23b-11de-b88c-69d903d5c500" with your unique_id.
+
