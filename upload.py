@@ -21,6 +21,7 @@ class UploadPostHandler(webapp.RequestHandler):
       if line.startswith('Content-Disposition') and line.find('filename=') > -1:
         filename = line.split(';')[2][11:-2]
     
+    filename = self.request.get('filename')
     unique_id = str(uuid.uuid1())
     if self.request.get('unique_id'):
       unique_id = self.request.get('unique_id')
@@ -41,7 +42,9 @@ class UploadPostHandler(webapp.RequestHandler):
                                     height=image.height)
       image_data.put()
       image_meta_data.put()
-      self.response.out.write(unique_id)
+      self.response.out.write(unique_id+"\n")
+      self.response.out.write(str(image.width)+"\n")
+      self.response.out.write(str(image.height))
     else:
       self.redirect('/upload', permanent=False)
     
